@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varun's Gym</title>
+</head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<style>
+    body {
+        font-family: 'Playfair Display SC', serif;
+        margin: 0px;
+        padding: 0px;
+        background: url('imgs/bg4.png');
+        color: white;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .left {
+        position: absolute;
+        display: inline-block;
+        left: 34px;
+        top: 10px;
+    }
+
+    .left div {
+        text-align: center;
+    }
+
+    .left img {
+        width: 100px;
+
+    }
+
+    .mid {
+        /* border: 2px solid lightseagreen; */
+        display: block;
+        width: 50%;
+        margin: 20px auto;
+        padding: 3px 10px;
+        border-radius: 5px;
+    }
+
+    .right {
+        position: absolute;
+        display: inline-block;
+        right: 34px;
+        top: 10px;
+    }
+
+    .navbar {
+        display: inline-block;
+    }
+
+    .navbar li {
+        display: inline-block;
+        font-size: 20px;
+    }
+
+    .navbar li a {
+        color: lightseagreen;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 34px 10px;
+
+    }
+
+    .navbar li a:hover {
+        text-decoration: underline;
+        color: rgb(211, 238, 247);
+        text-decoration: none;
+
+    }
+
+    .btn {
+        font-family: 'Playfair Display SC', serif;
+        margin: 23px 3px;
+        color: white;
+        background-color: black;
+        padding: 10px 20px;
+        border: 2px solid lightseagreen;
+        font-size: 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: rgb(33, 39, 39);
+    }
+
+    .container {
+        border: 2px solid lightseagreen;
+        margin: 61px 924px;
+    padding: 32px;
+    width: 31%;
+    border-radius: 25px
+    }
+
+    .form-group input {
+        font-family: 'Playfair Display SC', serif;
+        text-align: center;
+        display: block;
+        width: 293px;
+        padding: 13px;
+        border: 1px solid black;
+        margin: 12px auto;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    .container h1 {
+        text-align: center;
+    }
+
+    .container button {
+        display: block;
+        margin: auto;
+    }
+</style>
+
+<body>
+    <header class="header">
+        <!-- left box for logo -->
+        <div I class="left">
+            <img src="imgs/logo.png" alt="">
+            <!-- <div>Varun fitness</div> -->
+            <!-- mid box for navbar -->
+        </div>
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Fitness Calculator</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+            <!-- I am mid -->
+        </div>
+        <!-- right box for search -->
+        <div class="right">
+            <button class="btn">Log In</button>
+            <button class="btn">Sign Up</button>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Join the best gym of delhi now</h1>
+        <form action="noaction.php">
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your contact number">
+            </div>
+            <button class="btn">Join Now</button>
+        </form>
+    </div>
+</body>
+
+</html>
