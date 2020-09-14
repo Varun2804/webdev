@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI_WhiteBoard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tool-bar">
+        <div class="hamburger"><img src="./tools/mywhite.jpg" alt=""
+        class="tool-img" id="whiteboard" 
+        onclick="handleTool('whiteboard')"></div>
+        <div class="tool-panel">
+            <div class="tool">
+                <img src="./tools/pencul.png" alt="" class="tool-img" id="pencil" onclick="handleTool('pencil')">
+                <div class="tool-option" id="pencil-option">
+                    <div class="slider">
+                        <input type="range" max="50" min="4" value="5" step="1">
+                    </div>
+                    <div class="colors">
+                        <div class="color red" onclick="changeColor('red')"></div>
+                        <div class="color green" onclick="changeColor('green')"></div>
+                        <div class="color blue" onclick="changeColor('blue')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tool">
+                <img src="./tools/erraasor.png" alt="" class="tool-img" id="eraser" onclick="handleTool('eraser')">
+                <div class="tool-option" id="eraser-option">
+                    <div class="slider">
+                        <input type="range" max="50" min="4" value="5" step="1">
+                    </div>
+                    <div class="colorse">                 
+                    </div>
+                </div>
+            </div>
+            <div class="tool">
+                <img src="./tools/stickyicon.png" alt=""
+                 class="tool-img" id="sticky" 
+                 onclick="handleTool('sticky')">
+            </div>
+            <div class="tool">
+                <img src="./tools/myimage.png" alt=""
+                 class="tool-img" id="upload" 
+                 onclick="handleTool('upload')">
+                 <input type="file" name="" id="acceptImg" style="display:none">
+            </div>
+            <div class="tool">
+                <img src="./tools/undo.png" alt=""
+                 class="tool-img" id="undo" 
+                 onclick="handleTool('undo')">
+            </div>
+            <div class="tool">
+                <img src="./tools/redo.png" alt=""
+                 class="tool-img" id="redo" 
+                 onclick="handleTool('redo')">
+            </div>
+            <div class="tool">
+                <img src="./tools/dd.png" alt=""
+                 class="tool-img" id="download" 
+                 onclick="handleTool('download')">
+            </div>
+        </div>
+    </div>
+    <canvas class="board"></canvas>
+    <!-- <div class="stickyPad">
+        <div class="nav-bar">
+            <div class="minimize"></div>
+            <div class="close"></div>
+        </div>
+        <div class="textbox">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+    </div> -->
+    <script>
+        let board = document.querySelector(".board");
+        board.height = window.innerHeight;
+        board.width = window.innerWidth;
+        // 2d, 3d, webgl
+        let ctx = board.getContext("2d");
+        window.addEventListener("resize", function () {
+            board.height = window.innerHeight;
+            board.height = window.innerWidth;
+            //redraw
+        })
+    </script>
+     <script src="utility.js"></script>
+    <script src="tools.js"></script>
+    <script src="sticky.js"></script>
+    <script src="img.js"></script>
+    <script src="canvas.js"></script>
+</body>
+
+</html>
+<!-- 
+        //tool
+        // ctx.fillStyle="green";
+        // adjust width of stroke
+        // ctx.lineWidth=5;
+        // ctx.strokeStyle="purple";
+        // x,y,width,height
+        // ctx.fillStyle(100,100,100,100)
+        // ctx.beginPath();
+        // move without drawing
+        // ctx.moveTo(50, 100);
+        // connect to last moveTo
+        // ctx.lineTo(100,200);
+        // ctx.lineTo(200,100);
+        // ctx.stroke();
+        // ctx.closePath();
+        // new Path
+        // ctx.beginPath();
+        // ctx.moveTo(250, 100);
+        // connect to last moveTo
+        // ctx.lineTo(300,200);
+        // ctx.strokeStyle="red";
+        // ctx.stroke(); -->
