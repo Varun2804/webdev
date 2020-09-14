@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>World clock</title>
+    <style>
+   .clock {
+    width: 300px;
+    height: 300px;
+    background-color: lightgrey;
+    background-image: url('img/time.jpg');
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 14px rgba(0,0,0,.5);
+    position: relative;
+    margin-top: 0px;
+    margin-left: 486px;
+    /* margin-right: 46px; */
+    margin-bottom: -143px;
+}
+      .clock .number {
+        --rotation: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transform: rotate(var(--rotation));
+        font-size: 1.5rem;
+        color: white;
+      }
+      
+      
+      .clock .number1 { --rotation: 30deg; }
+      .clock .number2 { --rotation: 60deg; }
+      .clock .number3 { --rotation: 90deg; }
+      .clock .number4 { --rotation: 120deg; }
+      .clock .number5 { --rotation: 150deg; }
+      .clock .number6 { --rotation: 180deg; }
+      .clock .number7 { --rotation: 210deg; }
+      .clock .number8 { --rotation: 240deg; }
+      .clock .number9 { --rotation: 270deg; }
+      .clock .number10 { --rotation: 300deg; }
+      .clock .number11 { --rotation: 330deg; }
+      
+      .clock .hand {
+          /* color: lightgrey; */
+        --rotation: 0;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        border: 1px solid white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        transform-origin: bottom;
+        z-index: 10;
+        transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+      }
+      
+      .clock::after {
+        content: '';
+        position: absolute;
+        background-color: black;
+        z-index: 11;
+        width: 15px;
+        height: 15px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      }
+      
+      .clock .hand.second {
+        width: 3px;
+        height: 45%;
+        background-color: red;
+      }
+      
+      .clock .hand.minute {
+        width: 7px;
+        height: 40%;
+        background-color: lightgrey;
+      }
+      
+      .clock .hand.hour {
+        width: 10px;
+        height: 35%;
+        background-color: lightgrey;
+      }
+
+
+/* ********************************************** */
+/* .clock1 {
+    width: 300px;
+    height: 300px;
+    background-color: lightgrey;
+    background-image: url(img/time.jpg);
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 14px rgba(0,0,0,.5);
+    position: relative;
+    margin-top: -40px;
+    margin-left: 387px;
+    margin-right: 47px;
+    margin-bottom: -10px;
+}
+      .clock1 .number {
+        --rotation: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transform: rotate(var(--rotation));
+        font-size: 1.5rem;
+        color: white;
+      } */
+      
+      
+      /* .clock1 .number1 { --rotation: 30deg; }
+      .clock1 .number2 { --rotation: 60deg; }
+      .clock1 .number3 { --rotation: 90deg; }
+      .clock1 .number4 { --rotation: 120deg; }
+      .clock1 .number5 { --rotation: 150deg; }
+      .clock1 .number6 { --rotation: 180deg; }
+      .clock1 .number7 { --rotation: 210deg; }
+      .clock1 .number8 { --rotation: 240deg; }
+      .clock1 .number9 { --rotation: 270deg; }
+      .clock1 .number10 { --rotation: 300deg; }
+      .clock1 .number11 { --rotation: 330deg; }
+      
+      .clock1 .hand {
+          /* color: lightgrey; */
+        /* --rotation: 0;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        border: 1px solid white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        transform-origin: bottom;
+        z-index: 10;
+        transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+      }
+      
+      .clock1::after {
+        content: '';
+        position: absolute;
+        background-color: black;
+        z-index: 11;
+        width: 15px;
+        height: 15px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      }
+      
+      .clock1 .hand.second {
+        width: 3px;
+        height: 45%;
+        background-color: red;
+      }
+      
+      .clock1 .hand.minute {
+        width: 7px;
+        height: 40%;
+        background-color: lightgrey;
+      } */
+       
+      /* .clock1 .hand.hour {
+        width: 10px;
+        height: 35%;
+        background-color: lightgrey; */
+        
+    
+
+    /* } */
+    /* .clock2#ml{ 
+        font-family:sans-serif;
+        font-size: 20px;
+        font-weight: lighter;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: 20px 10px;
+        padding: 20px 10px;
+
+    } */
+
+    
+    </style>
+
+
+<script defer src ="script.js"></script>
+
+    <script>
+        
+            let a;
+            let date;
+            let time;
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            setInterval(() => {
+            a = new Date();
+           
+          let x = a.toLocaleTimeString().split(' ')
+          time = x[0];
+           date = a.toLocaleDateString();
+           
+            document.getElementById('time').innerHTML =   time+ "<br>" +date;
+        }, 1000);
+        
+        setInterval(() => {
+            let b;
+            let date1;
+            let time1;
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            b = new Date();
+           
+            date1 = b.toLocaleString("en-US", {timeZone: "America/New_York"});
+            let z = b.toLocaleString().split(' ')
+           time1 = z[0];
+            document.getElementById('ct').innerHTML = date1;
+            
+        },1000);
+        setInterval(() => {
+            let b;
+            let date1;
+            let time1;
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            b = new Date();
+           
+            date1 = b.toLocaleString("en-US", {timeZone: "Asia/Shanghai"});
+        //     let z = b.toLocaleTimeString().split(' ')
+        //    time1 = z[0];
+            document.getElementById('at').innerHTML = date1;
+            
+        },1000);
+        setInterval(() => {
+            let b;
+            let date1;
+            let time1;
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            b = new Date();
+           
+            date1 = b.toLocaleString("en-US", {timeZone: "Australia/Brisbane"});
+        //     let z = b.toLocaleTimeString().split(' ')
+        //    time1 = z[0];
+            document.getElementById('pt').innerHTML =date1;
+            
+        },1000);
+        setInterval(() => {
+            let b;
+            let date1;
+            let time1;
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            b = new Date();
+           
+            date1 = b.toLocaleString("en-US", {timeZone: "Europe/Paris"});
+        //     let z = b.toLocaleTimeString().split(' ')
+        //    time1 = z[0];
+            document.getElementById('mt').innerHTML =date1;
+            
+        },1000);
+    </script>
+
+    <style>
+        body {
+            background-image: url('img/bg2.jpg');
+            font-family: 'Playfair Display SC', serif;
+            background-size: cover;
+        }
+        .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: rgba(0,0,0,.5);
+}
+
+        .jumbotron {
+            padding: 14px 32px;
+            border: 20px 40px;
+            margin-top: 57px;
+            margin-left: 368px;
+            margin-right: -159px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: lightseagreen;
+            border: lightseagreen;
+        }
+
+        .btn:hover {
+            background-color: gray
+        }
+
+        .btn-outline-success {
+            color: white;
+            border-color: grey;
+        }
+
+        .btn-primary:focus {
+            color: #fff;
+            border-color: gray;
+
+        }
+        .display-4 {
+     font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+        .card-body {
+            border: 20px 40px;
+            margin-top: 52px;
+            margin-left: 640px;
+            margin-right: 140px;
+            margin-bottom: 50px;
+
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            min-height: 6px;
+            padding: 1.25rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 20px;
+        }
+
+        body {
+            margin: 0px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
+            background-color: #fff;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">World clock</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Time Zones
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Atlantic Standard Time(AST)</a>
+                        <a class="dropdown-item" href="#">Eastern Standard Time(EST)</a>
+                        <a class="dropdown-item" href="#">Mountain Standard Time(MST)</a>
+                         <a class="dropdown-item" href="#">Pasific Standard Time(PST)</a>
+                    </div>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Country Name" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container my-4">
+        <div class="jumbotron">
+            <div class="clock">
+                <div class="hand hour" data-hour-hand></div>
+                <div class="hand minute" data-minute-hand></div>
+                <div class="hand second" data-second-hand></div>
+                <div class="number number1">1</div>
+                <div class="number number2">2</div>
+                <div class="number number3">3</div>
+                <div class="number number4">4</div>
+                <div class="number number5">5</div>
+                <div class="number number6">6</div>
+                <div class="number number7">7</div>
+                <div class="number number8">8</div>
+                <div class="number number9">9</div>
+                <div class="number number10">10</div>
+                <div class="number number11">11</div>
+                <div class="number number12">12</div>
+              </div>
+
+
+            <h1 class="">Current time is <span id="time"></span></h1>
+            <p class="lead">You are looking at the current Indian Standard Time(IST).</p>
+            <hr class="my-4">
+            <p>Here to show you the time of different countries.</p>
+            <button class="btn btn-primary btn-lg" data-toggle="collapse" href="#collapseExample" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                Browse Time</button>
+        </div>
+    </div>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <h2>Eastern Standard Time(EST)</h2>
+            <h1 class="display-4">Current time is <span id="ct"></span></h1>
+            <!-- <div class="clock1">
+                <div class="hand hour" data-hour-hand></div>
+                <div class="hand minute" data-minute-hand></div>
+                <div class="hand second" data-second-hand></div>
+                <div class="number number1">1</div>
+                <div class="number number2">2</div>
+                <div class="number number3">3</div>
+                <div class="number number4">4</div>
+                <div class="number number5">5</div>
+                <div class="number number6">6</div>
+                <div class="number number7">7</div>
+                <div class="number number8">8</div>
+                <div class="number number9">9</div>
+                <div class="number number10">10</div>
+                <div class="number number11">11</div>
+                <div class="number number12">12</div>
+              </div> -->
+        </div>
+     <div class="card card-body">
+            <h2>China Standard Time(CST)</h2>
+            <h1 class="display-4">Current time is <span id="at"></span></h1>
+            <!-- <div class="clock1">
+                <div class="hand hour" data-hour-hand></div>
+                <div class="hand minute" data-minute-hand></div>
+                <div class="hand second" data-second-hand></div>
+                <div class="number number1">1</div>
+                <div class="number number2">2</div>
+                <div class="number number3">3</div>
+                <div class="number number4">4</div>
+                <div class="number number5">5</div>
+                <div class="number number6">6</div>
+                <div class="number number7">7</div>
+                <div class="number number8">8</div>
+                <div class="number number9">9</div>
+                <div class="number number10">10</div>
+                <div class="number number11">11</div>
+                <div class="number number12">12</div>
+              </div> -->
+        </div>
+        <div class="card card-body">
+            <h2>Austrailian Eastern Standard Time(AEST)</h2>
+            <h1 class="display-4">Current time is <span id="pt"></span></h1>
+           
+             <!-- <div class="clock1">
+                <div  class="clock2" id="ml">
+                <!-</h2>The standardization of time in Australia began in 1892, when surveyors from the six Dominions in Australia met in Melbourne for the Intercolonial Conference of Surveyors. The delegates accepted the recommendation of the 1884 International Meridian Conference to adopt Greenwich Mean Time (GMT) as the basis for standard time.</h2>
+             -->
+                <!-- <div class="hand hour" data-hour-hand></div>
+                <div class="hand minute" data-minute-hand></div>
+                <div class="hand second" data-second-hand></div>
+                <div class="number number1">1</div>
+                <div class="number number2">2</div>
+                <div class="number number3">3</div>
+                <div class="number number4">4</div>
+                <div class="number number5">5</div>
+                <div class="number number6">6</div>
+                <div class="number number7">7</div>
+                <div class="number number8">8</div>
+                <div class="number number9">9</div>
+                <div class="number number10">10</div>
+                <div class="number number11">11</div>
+                <div class="number number12">12</div>
+              </div> --> -->
+        </div>
+        <div class="card card-body">
+            <h2>Central European Time(CET)</h2>
+            <h1 class="display-4">Current time is <span id="mt"></span></h1>
+            <!-- <div class="clock1">
+                <div class="hand hour" data-hour-hand></div>
+                <div class="hand minute" data-minute-hand></div>
+                <div class="hand second" data-second-hand></div>
+                <div class="number number1">1</div>
+                <div class="number number2">2</div>
+                <div class="number number3">3</div>
+                <div class="number number4">4</div>
+                <div class="number number5">5</div>
+                <div class="number number6">6</div>
+                <div class="number number7">7</div>
+                <div class="number number8">8</div>
+                <div class="number number9">9</div>
+                <div class="number number10">10</div>
+                <div class="number number11">11</div>
+                <div class="number number12">12</div>
+              </div> -->
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+<!-- var aestTime = new Date().toLocaleString("en-US", {timeZone: "Australia/Brisbane"});
+console.log('AEST time: '+ (new Date(aestTime)).toISOString())
+
+var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Shanghai"});
+console.log('Asia time: '+ (new Date(asiaTime)).toISOString())
+
+var usaTime = new Date().toLocaleString("en-US", {timeZone: "America/New_York"});
+console.log('USA time: '+ (new Date(usaTime)).toISOString())
+
+var indiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Kol -->
